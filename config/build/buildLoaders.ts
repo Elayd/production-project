@@ -9,7 +9,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     }
 
-    const babelLoader =  {
+    const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
@@ -20,7 +20,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
                     [
                         "i18next-extract",
                         {
-                            locales: ["ru", "en"],
+                            locales: ['ru', 'en'],
                             keyAsDefaultValue: true
                         }
                     ],
@@ -34,7 +34,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         use: [
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
-                loader: 'css-loader',
+                loader: "css-loader",
                 options: {
                     modules: {
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
@@ -44,26 +44,26 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
                     },
                 }
             },
-            'sass-loader',
-        ]
+            "sass-loader",
+        ],
     }
 
+    // Если не используем тайпскрипт - нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
     }
 
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
 
-    const fileLoader =
-        {
-            test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-            use: [
-                {
-                    loader: 'file-loader',
-                },
-            ],
-        }
     return [
         fileLoader,
         svgLoader,
