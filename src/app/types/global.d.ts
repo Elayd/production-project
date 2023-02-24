@@ -1,5 +1,3 @@
-// Глобальная деклорация типов
-
 declare module '*.scss' {
     interface IClassNames {
         [className: string]: string
