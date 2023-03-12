@@ -1,4 +1,6 @@
 {
+  "('decrement')": "('decrement')",
+  "('increment')": "('increment')",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
@@ -16,7 +18,5 @@
   "Переключить": "Переключить",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
-  "Язык": "Язык",
-  "('increment')": "('increment')",
-  "('decrement')": "('decrement')"
+  "Язык": "Язык"
 }
