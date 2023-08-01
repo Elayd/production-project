@@ -10,6 +10,7 @@ import { userActions } from 'entities/User';
 function App() {
     const { theme } = useTheme();
     const dispatch = useDispatch();
+    console.log('2');
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
