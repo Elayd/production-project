@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
 
 function App() {
-    console.log('23');
     const { theme } = useTheme();
     const dispatch = useDispatch();
 
