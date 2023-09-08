@@ -1,0 +1,27 @@
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import Avatar from 'shared/ui/Avatar/Avatar';
+
+export default {
+    title: 'shared/Avatar',
+    component: Avatar,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof Avatar>;
+
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+    size: 150,
+    src: 'https://s15.stc.all.kpcdn.net/afisha/msk/wp-content/uploads/sites/5/2023/01/kadr-iz-filma-avatar-put-vody.jpg',
+};
+
+export const Small = Template.bind({});
+Small.args = {
+    size: 50,
+    src: 'https://s15.stc.all.kpcdn.net/afisha/msk/wp-content/uploads/sites/5/2023/01/kadr-iz-filma-avatar-put-vody.jpg',
+};
